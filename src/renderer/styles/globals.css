@@ -17,12 +17,16 @@ body,
 
 html {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   background: var(--app-bg);
   color: #e5e5e5;
+  overflow-x: hidden;
   overscroll-behavior-y: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
