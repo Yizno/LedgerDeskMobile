@@ -27,8 +27,5 @@ public class MainActivity extends BridgeActivity {
     settings.setSupportZoom(false);
     settings.setBuiltInZoomControls(false);
     settings.setDisplayZoomControls(false);
-    settings.setUseWideViewPort(false);
-    settings.setLoadWithOverviewMode(false);
-    settings.setTextZoom(100);
   }
 }
