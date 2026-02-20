@@ -235,34 +235,6 @@ export function App() {
       return;
     }
 
-    let rafId = 0;
-    const normalizeViewport = () => {
-      if (rafId) {
-        window.cancelAnimationFrame(rafId);
-      }
-      rafId = window.requestAnimationFrame(() => {
-        const viewport = document.querySelector('meta[name="viewport"]');
-        viewport?.setAttribute('content', 'width=device-width, initial-scale=1, viewport-fit=cover');
-      });
-    };
-
-    normalizeViewport();
-    window.addEventListener('orientationchange', normalizeViewport);
-    window.addEventListener('resize', normalizeViewport);
-    return () => {
-      if (rafId) {
-        window.cancelAnimationFrame(rafId);
-      }
-      window.removeEventListener('orientationchange', normalizeViewport);
-      window.removeEventListener('resize', normalizeViewport);
-    };
-  }, [isWindows]);
-
-  useEffect(() => {
-    if (isWindows) {
-      return;
-    }
-
     const blurEditableOnOutsidePress = (event: PointerEvent) => {
       const active = document.activeElement as HTMLElement | null;
       if (!active) {
