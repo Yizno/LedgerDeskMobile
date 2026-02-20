@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-bg: #1c1c1c;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--app-bg);
+  color: #e5e5e5;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable='true'] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.bg-app-gradient {
+  background: var(--app-bg);
+}
+
+.animate-fade-in {
+  animation: fade-in 180ms ease;
+}
+
+html.perf-mode-lite *,
+html.perf-mode-aggressive *,
+html.perf-mode-extreme * {
+  transition-duration: 0ms !important;
+  animation-duration: 0ms !important;
+  animation-delay: 0ms !important;
+}
+
+html.perf-mode-lite .animate-fade-in,
+html.perf-mode-aggressive .animate-fade-in,
+html.perf-mode-extreme .animate-fade-in {
+  animation: none !important;
+}
+
+html.perf-mode-aggressive .perf-surface-card,
+html.perf-mode-extreme .perf-surface-card {
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+html.perf-mode-aggressive .perf-surface-modal,
+html.perf-mode-extreme .perf-surface-modal {
+  backdrop-filter: none !important;
+}
+
+.safe-mobile-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+.safe-fab-offset {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
